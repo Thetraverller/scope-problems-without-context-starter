@@ -43,7 +43,40 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 // your code here
+let curriedSum = (numArgs) => {
+  let numbers = []
 
+  let _curriedSum = (num) => {
+    numbers.push(num)
+    if (numbers.length === numArgs) {
+     return summate(numbers)
+    }else {
+      return _curriedSum
+    }
+    }
+    return _curriedSum
+  }
+
+let summate = function(arr) {
+  let sum = 0
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i]
+    sum += num
+  }
+  return sum
+}
+//--------------------
+// 1
+const sum = curriedSum(4); // returns a function
+console.log(sum(5)) // returns a function
+console.log(sum(20)) // returns a function
+console.log(sum(30)) // returns a function
+console.log(sum(20)); // => returns 75
+
+// 2
+// this function can also be invoked like this:
+const sum2 = curriedSum(3)(2)(1)(7); // => returns 10
+console.log(sum2)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

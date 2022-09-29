@@ -16,6 +16,25 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 ***********************************************************************/
 
 // your code here!
+let coupon = discount => {              //pF
+     let newPrice = []
+          let child = numArr => {               //cF
+          numArr.forEach(el => {
+           price = el * (1 - discount)
+           newPrice.push(price)
+          });
+          return newPrice
+        }
+        return child;
+}
+//-------------
+// Example 1:
+let tenPercent = coupon(0.1);
+console.log(tenPercent([10, 20, 30])); // [ 9, 18, 27 ]
+
+// Example 2:
+let twentyPercent = coupon(0.2);
+console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
